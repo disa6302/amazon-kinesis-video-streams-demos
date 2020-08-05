@@ -44,3 +44,35 @@ target_link_libraries(
   aws-cpp-sdk-core
   aws-cpp-sdk-monitoring
   aws-cpp-sdk-logs)
+
+add_executable(
+  kvsWebrtcClientMasterCanary
+  src/Config.cpp
+  src/Cloudwatch.cpp
+  src/Common.cpp
+  src/KvsWebRtcMasterCanary.cpp)
+target_link_libraries(
+  kvsWebrtcClientMasterCanary
+  kvsWebrtcClient
+  kvsWebrtcSignalingClient
+  kvspicUtils
+  aws-cpp-sdk-core
+  aws-cpp-sdk-monitoring
+  aws-cpp-sdk-logs)
+
+add_executable(
+  kvsWebrtcClientViewerCanary
+  src/Config.cpp
+  src/Cloudwatch.cpp
+  src/Common.cpp
+  src/KvsWebRtcViewerCanary.cpp)
+  
+target_link_libraries(
+  kvsWebrtcClientViewerCanary
+  kvsWebrtcClient
+  kvsWebrtcSignalingClient
+  kvspicUtils
+  aws-cpp-sdk-core
+  aws-cpp-sdk-monitoring
+  aws-cpp-sdk-logs)
+  
